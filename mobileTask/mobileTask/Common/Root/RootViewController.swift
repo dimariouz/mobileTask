@@ -29,7 +29,7 @@ class RootViewController: UIViewController, AlertPresenter, ActivityIndicatorPre
     }
     
     func setupBackgroundColor() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "backgroundPrimary")
     }
     
     func popViewController() {
