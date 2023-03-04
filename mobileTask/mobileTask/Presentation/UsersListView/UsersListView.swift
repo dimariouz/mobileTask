@@ -57,6 +57,13 @@ final class UsersListView: RootViewController {
         setBackButtonHidden(true)
         title = C.title
         setupTableView()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorites", style: .plain, target: self, action: #selector(showFavorites))
+    }
+    
+    @objc private func showFavorites() {
+        model.filterFavorites()
+        tableView.reloadData()
     }
     
     private func setupTableView() {
@@ -104,7 +111,7 @@ extension UsersListView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastItem = model.usersList.count - 1
-        if indexPath.row == lastItem {
+        if indexPath.row == lastItem && !model.showFavoriteOnly {
             if model.currentPage < model.totalPages {
                 let page = model.currentPage + 1
                 model.fetchUsers(page: page)
