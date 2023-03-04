@@ -9,23 +9,18 @@ import UIKit
 
 final class SplashView: RootViewController {
     private enum C {
-        static let routeDelay: TimeInterval = 1
+        static let routeDelay: TimeInterval = 2
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         routeToUsersListView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNavigationBarHidden(true)
-    }
-    
-    private func setupUI() {
-        view.backgroundColor = .systemRed
     }
     
     private func routeToUsersListView() {

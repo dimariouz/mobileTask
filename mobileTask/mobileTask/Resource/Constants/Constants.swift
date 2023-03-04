@@ -13,6 +13,7 @@ enum Constants {
     enum Storyboards: String {
         case splash = "Splash"
         case usersList = "UsersList"
+        case userDetails = "UserDetails"
     }
     
     enum APIs {

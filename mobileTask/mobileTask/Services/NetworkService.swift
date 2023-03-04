@@ -25,4 +25,3 @@ final class NetworkService: NetworkServiceProtocol {
         .serializingDecodable(T.self).value
     }
 }
-

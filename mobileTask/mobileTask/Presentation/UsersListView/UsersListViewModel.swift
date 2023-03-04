@@ -7,10 +7,20 @@
 
 import Foundation
 
-final class UsersListViewModel: ViewModelHandleProtocol {
+final class UsersListViewModel {
     private let platform: Platform
     
+    private var usersResponse: UsersResponse?
+    
     private(set) var usersList: [User] = []
+    
+    var currentPage: Int {
+        usersResponse?.page ?? 1
+    }
+    
+    var totalPages: Int {
+        usersResponse?.totalPages ?? 0
+    }
     
     var didReceiveError: Closure<Error>?
     var didReceiveResult: Closure<Void>?
@@ -20,10 +30,12 @@ final class UsersListViewModel: ViewModelHandleProtocol {
         self.platform = platform
     }
     
-    func fetchUsers() {
+    func fetchUsers(page: Int = 1) {
+        isLoading?(true)
         Task {
             do {
-                usersList = try await platform.usersService.getUsersList(page: 1)
+                usersResponse = try await platform.usersService.getUsersList(page: page)
+                usersList += (usersResponse?.users ?? [])
                 DispatchQueue.main.async {
                     self.didReceiveResult?(())
                     self.isLoading?(false)
@@ -35,5 +47,10 @@ final class UsersListViewModel: ViewModelHandleProtocol {
                 }
             }
         }
+    }
+    
+    func refreshFetch() {
+        usersList = []
+        fetchUsers(page: 1)
     }
 }

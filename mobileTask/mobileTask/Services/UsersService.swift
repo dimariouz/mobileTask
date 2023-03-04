@@ -9,21 +9,17 @@ import Foundation
 import Alamofire
 
 protocol UsersServiceProtocol: AnyObject {
-    func getUsersList(page: Int) async throws -> [User]
-    func getSingleUser(with id: Int) async throws -> User
+    func getUsersList(page: Int) async throws -> UsersResponse
 }
 
 final class UsersService: UsersServiceProtocol {
     private enum Path {
         case users(Int)
-        case user(Int)
         
         var path: String {
             switch self {
             case .users(let page):
                 return "/api/users?page=\(page)"
-            case .user(let id):
-                return "/api/user/\(id)"
             }
         }
     }
@@ -34,13 +30,8 @@ final class UsersService: UsersServiceProtocol {
         self.networkService = networkService
     }
     
-    func getUsersList(page: Int) async throws -> [User] {
+    func getUsersList(page: Int) async throws -> UsersResponse {
         let response: APIResponse<[User]> = try await networkService.get(path: Path.users(page).path)
-        return response.data
-    }
-    
-    func getSingleUser(with id: Int) async throws -> User {
-        let response: APIResponse<User> = try await networkService.get(path: Path.user(id).path)
-        return response.data
+        return UsersResponse(page: response.page, totalPages: response.totalPages, users: response.data)
     }
 }

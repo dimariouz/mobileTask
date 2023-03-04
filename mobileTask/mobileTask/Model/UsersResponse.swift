@@ -1,11 +1,17 @@
 //
-//  User.swift
+//  UsersResponse.swift
 //  mobileTask
 //
 //  Created by Dmitry Doroshchuk on 04.03.2023.
 //
 
 import Foundation
+
+struct UsersResponse: Codable {
+    let page: Int?
+    let totalPages: Int?
+    let users: [User]
+}
 
 struct User: Codable {
     let id: Int

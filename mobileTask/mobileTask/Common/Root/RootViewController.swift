@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController, AlertPresenter {
+class RootViewController: UIViewController, AlertPresenter, ActivityIndicatorPresenter {
    
     var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator =  UIActivityIndicatorView()
@@ -25,7 +25,7 @@ class RootViewController: UIViewController, AlertPresenter {
         super.viewDidLoad()
 
         setupBackgroundColor()
-//        setNavigationBarHidden()
+        setNavigationBarHidden()
     }
     
     func setupBackgroundColor() {

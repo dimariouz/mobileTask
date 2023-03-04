@@ -1,5 +1,5 @@
 //
-//  Response.swift
+//  APIResponse.swift
 //  mobileTask
 //
 //  Created by Dmitry Doroshchuk on 04.03.2023.
@@ -14,7 +14,7 @@ struct APIResponse<T: Decodable>: Decodable {
     let totalPages: Int?
     let data: T
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case page, data, total
         case perPage = "per_page"
         case totalPages = "total_pages"
