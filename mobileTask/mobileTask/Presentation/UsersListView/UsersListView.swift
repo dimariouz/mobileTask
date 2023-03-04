@@ -33,17 +33,17 @@ final class UsersListView: RootViewController {
     
     private func setupBindings() {
         model.didReceiveResult = { [weak self] _ in
-            guard let self = self else { return }
+            guard let self else { return }
             self.tableView.reloadData()
         }
         
         model.didReceiveError = { [weak self] error in
-            guard let self = self else { return }
+            guard let self else { return }
             self.handleError(with: error)
         }
         
         model.isLoading = { [weak self] isLoading in
-            guard let self = self else { return }
+            guard let self else { return }
             if isLoading {
                 self.refreshControl.beginRefreshing()
             } else {
@@ -95,6 +95,10 @@ extension UsersListView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: UserTableViewCell.self, forIndexPath: indexPath)
         cell.configure(model: model.usersList[indexPath.row])
+        cell.addToFavClosure = { [weak self] _ in
+            guard let self else { return }
+            self.model.addToFavorite(user: self.model.usersList[indexPath.row])
+        }
         return cell
     }
     

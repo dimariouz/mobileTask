@@ -9,7 +9,7 @@ import UIKit
 
 final class SplashView: RootViewController {
     private enum C {
-        static let routeDelay: TimeInterval = 2
+        static let routeDelay: TimeInterval = 1.5
     }
     
     override func viewDidLoad() {

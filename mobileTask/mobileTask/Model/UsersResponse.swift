@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct UsersResponse: Codable {
     let page: Int?
@@ -19,10 +20,43 @@ struct User: Codable {
     let firstName: String
     let lastName: String
     let avatar: String
+    var isFavorite = false
+    
+    init(from db: FavoriteUser) {
+        id = db.id
+        email = db.email
+        firstName = db.firstName
+        lastName = db.lastName
+        avatar = db.avatar
+        isFavorite = true
+    }
     
     private enum CodingKeys: String, CodingKey {
         case id, email, avatar
         case firstName = "first_name"
         case lastName = "last_name"
+    }
+}
+
+extension User: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+class FavoriteUser: Object {
+    @Persisted(primaryKey: true) var id = 0
+    @Persisted var email = ""
+    @Persisted var firstName = ""
+    @Persisted var lastName = ""
+    @Persisted var avatar = ""
+    
+    convenience init(user: User) {
+        self.init()
+        self.id = user.id
+        self.email = user.email
+        self.firstName = user.firstName
+        self.lastName = user.lastName
+        self.avatar = user.avatar
     }
 }

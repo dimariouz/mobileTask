@@ -37,6 +37,7 @@ final class UsersListViewModel {
                 usersResponse = try await platform.usersService.getUsersList(page: page)
                 usersList += (usersResponse?.users ?? [])
                 DispatchQueue.main.async {
+                    self.setupFavorites(usersList: &self.usersList)
                     self.didReceiveResult?(())
                     self.isLoading?(false)
                 }
@@ -49,8 +50,25 @@ final class UsersListViewModel {
         }
     }
     
+    private func setupFavorites(usersList: inout [User]){
+        let favorites = platform.storageService.fetchFavorites()
+        usersList = usersList.map { user in
+            var _user = user
+            if favorites.contains(where: { $0 == _user }) {
+                _user.isFavorite = true
+            }
+            return _user
+        }
+    }
+    
     func refreshFetch() {
         usersList = []
         fetchUsers(page: 1)
+    }
+    
+    func addToFavorite(user: User) {
+        guard let index = usersList.firstIndex(where: { $0.id == user.id }) else { return }
+        usersList[index].isFavorite.toggle()
+        platform.storageService.addToFavotite(user: user)
     }
 }

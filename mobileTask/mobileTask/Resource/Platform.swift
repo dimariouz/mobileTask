@@ -11,11 +11,13 @@ final class Platform {
     
     let networkService: NetworkServiceProtocol
     let usersService: UsersServiceProtocol
+    let storageService: StorageServiceProtocol
     
     static let shared = Platform()
         
     private init() {
         networkService = NetworkService()
+        storageService = StorageService()
         usersService = UsersService(networkService: networkService)
     }
 }
