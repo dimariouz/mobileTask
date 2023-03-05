@@ -20,17 +20,26 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favorites yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZp-se-dOd">
+                                <rect key="frame" x="110.33333333333333" y="423.66666666666669" width="172.66666666666669" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="backgroundPrimary"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="iVS-hx-RgS" secondAttribute="bottom" id="2FR-ru-nYP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iVS-hx-RgS" secondAttribute="trailing" id="QKk-mt-kJ1"/>
+                            <constraint firstItem="PZp-se-dOd" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="a9u-6E-mxm"/>
                             <constraint firstItem="iVS-hx-RgS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bsl-eW-dBB"/>
+                            <constraint firstItem="PZp-se-dOd" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="fEW-9x-1FU"/>
                             <constraint firstItem="iVS-hx-RgS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="grj-oB-Zcz"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noFavLabel" destination="PZp-se-dOd" id="Lr6-Rc-N2W"/>
                         <outlet property="tableView" destination="iVS-hx-RgS" id="xYy-pE-HGN"/>
                     </connections>
                 </viewController>

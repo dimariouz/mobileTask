@@ -13,6 +13,7 @@ final class UsersListView: RootViewController {
     }
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var noFavLabel: UILabel!
     
     private let refreshControl = UIRefreshControl()
     private let model = UsersListViewModel(platform: Platform.shared)
@@ -49,7 +50,10 @@ final class UsersListView: RootViewController {
             } else {
                 self.refreshControl.endRefreshing()
             }
-            self.animateIndicator(isLoading)
+            if !isLoading {
+                self.tableView.tableFooterView = nil
+            }
+            self.animateIndicator(isLoading && self.model.usersList.isEmpty)
         }
     }
     
@@ -63,6 +67,7 @@ final class UsersListView: RootViewController {
     
     @objc private func showFavorites() {
         model.filterFavorites()
+        noFavLabel.isHidden = !model.usersList.isEmpty
         tableView.reloadData()
     }
     
@@ -109,12 +114,25 @@ extension UsersListView: UITableViewDataSource {
         return cell
     }
     
+    private func footerView() -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        let spinner = UIActivityIndicatorView()
+        spinner.center = view.center
+        spinner.startAnimating()
+        view.addSubview(spinner)
+        return view
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastItem = model.usersList.count - 1
         if indexPath.row == lastItem && !model.showFavoriteOnly {
             if model.currentPage < model.totalPages {
                 let page = model.currentPage + 1
-                model.fetchUsers(page: page)
+                tableView.tableFooterView = footerView()
+                // a small delay for animating footer, the second page loading too fast
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.model.fetchUsers(page: page)
+                }
             }
         }
     }
