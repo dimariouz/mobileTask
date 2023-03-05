@@ -12,7 +12,6 @@ protocol AlertPresenter: AnyObject {
 }
 
 extension AlertPresenter where Self: UIViewController {
-    
     func showAlert(title: String = "Error",
                    message: String,
                    actions: [UIAlertAction] = []) {
@@ -28,5 +27,4 @@ extension AlertPresenter where Self: UIViewController {
         }
         self.present(alert, animated: true, completion: nil)
     }
-    
 }

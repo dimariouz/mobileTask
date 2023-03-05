@@ -13,7 +13,6 @@ protocol ActivityIndicatorPresenter: AnyObject {
 }
 
 extension ActivityIndicatorPresenter where Self: UIViewController {
-    
     func animateIndicator(_ animate: Bool) {
         if animate {
             view.addSubview(activityIndicator)

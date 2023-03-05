@@ -49,8 +49,6 @@ final class UsersListView: RootViewController {
                 self.refreshControl.beginRefreshing()
             } else {
                 self.refreshControl.endRefreshing()
-            }
-            if !isLoading {
                 self.tableView.tableFooterView = nil
             }
             self.animateIndicator(isLoading && self.model.usersList.isEmpty)

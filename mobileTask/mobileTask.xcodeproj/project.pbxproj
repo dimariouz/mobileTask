@@ -11,7 +11,6 @@
 		0913338C29B4F652005DEEF1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0913338B29B4F652005DEEF1 /* Realm */; };
 		094A188F29B3A61E00364A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A188E29B3A61E00364A33 /* AppDelegate.swift */; };
 		094A189129B3A61E00364A33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A189029B3A61E00364A33 /* SceneDelegate.swift */; };
-		094A189329B3A61E00364A33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A189229B3A61E00364A33 /* ViewController.swift */; };
 		094A189829B3A62200364A33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094A189729B3A62200364A33 /* Assets.xcassets */; };
 		094A189B29B3A62200364A33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094A189929B3A62200364A33 /* LaunchScreen.storyboard */; };
 		094A18B029B3A62200364A33 /* mobileTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A18AF29B3A62200364A33 /* mobileTaskUITests.swift */; };
@@ -68,7 +67,6 @@
 		094A188B29B3A61E00364A33 /* mobileTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobileTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094A188E29B3A61E00364A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		094A189029B3A61E00364A33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		094A189229B3A61E00364A33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		094A189729B3A62200364A33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		094A189A29B3A62200364A33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		094A189C29B3A62200364A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,11 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				094A18BF29B3A73700364A33 /* Source */,
-				094A18BE29B3A71D00364A33 /* Model */,
-				094A18C129B3A75100364A33 /* Services */,
-				094A18C229B3A75500364A33 /* Presentation */,
-				094A18C329B3A75A00364A33 /* Common */,
-				094A18C029B3A74400364A33 /* Resource */,
 			);
 			path = mobileTask;
 			sourceTree = "<group>";
@@ -204,6 +197,11 @@
 		094A18BF29B3A73700364A33 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				094A18BE29B3A71D00364A33 /* Model */,
+				094A18C129B3A75100364A33 /* Services */,
+				094A18C229B3A75500364A33 /* Presentation */,
+				094A18C329B3A75A00364A33 /* Common */,
+				094A18C029B3A74400364A33 /* Resource */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -215,7 +213,6 @@
 				094A18E529B3B36300364A33 /* Platform.swift */,
 				094A188E29B3A61E00364A33 /* AppDelegate.swift */,
 				094A189029B3A61E00364A33 /* SceneDelegate.swift */,
-				094A189229B3A61E00364A33 /* ViewController.swift */,
 				094A189729B3A62200364A33 /* Assets.xcassets */,
 				094A189929B3A62200364A33 /* LaunchScreen.storyboard */,
 				094A189C29B3A62200364A33 /* Info.plist */,
@@ -487,7 +484,6 @@
 				09DCBFB529B3CB8F008F8254 /* UserDetailsViewModel.swift in Sources */,
 				094A18C729B3A7E900364A33 /* NetworkService.swift in Sources */,
 				094A18C529B3A76A00364A33 /* UsersResponse.swift in Sources */,
-				094A189329B3A61E00364A33 /* ViewController.swift in Sources */,
 				094A188F29B3A61E00364A33 /* AppDelegate.swift in Sources */,
 				094A189129B3A61E00364A33 /* SceneDelegate.swift in Sources */,
 				09DCBFB329B3CB87008F8254 /* UserDetailsView.swift in Sources */,
@@ -669,7 +665,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = mobileTask/Resource/Info.plist;
+				INFOPLIST_FILE = mobileTask/Source/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -699,7 +695,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = mobileTask/Resource/Info.plist;
+				INFOPLIST_FILE = mobileTask/Source/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;

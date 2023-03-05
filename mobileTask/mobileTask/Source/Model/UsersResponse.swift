@@ -22,7 +22,8 @@ struct User: Codable {
     let avatar: String
     var isFavorite = false
     
-    init(id: Int, email: String, firstName: String, lastName: String, avatar: String, isFavorite: Bool = false) {
+    init(id: Int, email: String, firstName: String, lastName: String,
+         avatar: String, isFavorite: Bool = false) {
         self.id = id
         self.email = email
         self.firstName = firstName
