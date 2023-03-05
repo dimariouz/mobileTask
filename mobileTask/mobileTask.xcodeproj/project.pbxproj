@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0913338A29B4F64F005DEEF1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0913338929B4F64F005DEEF1 /* RealmSwift */; };
+		0913338C29B4F652005DEEF1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0913338B29B4F652005DEEF1 /* Realm */; };
 		094A188F29B3A61E00364A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A188E29B3A61E00364A33 /* AppDelegate.swift */; };
 		094A189129B3A61E00364A33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A189029B3A61E00364A33 /* SceneDelegate.swift */; };
 		094A189329B3A61E00364A33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A189229B3A61E00364A33 /* ViewController.swift */; };
 		094A189829B3A62200364A33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094A189729B3A62200364A33 /* Assets.xcassets */; };
 		094A189B29B3A62200364A33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094A189929B3A62200364A33 /* LaunchScreen.storyboard */; };
-		094A18A629B3A62200364A33 /* mobileTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A18A529B3A62200364A33 /* mobileTaskTests.swift */; };
 		094A18B029B3A62200364A33 /* mobileTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A18AF29B3A62200364A33 /* mobileTaskUITests.swift */; };
 		094A18B229B3A62300364A33 /* mobileTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A18B129B3A62300364A33 /* mobileTaskUITestsLaunchTests.swift */; };
 		094A18C529B3A76A00364A33 /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A18C429B3A76A00364A33 /* UsersResponse.swift */; };
@@ -43,6 +44,7 @@
 		09DCBFBA29B3DDF5008F8254 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 09DCBFB929B3DDF5008F8254 /* Realm */; };
 		09DCBFBC29B3DDF5008F8254 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 09DCBFBB29B3DDF5008F8254 /* RealmSwift */; };
 		09DCBFBE29B3DEBF008F8254 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCBFBD29B3DEBF008F8254 /* StorageService.swift */; };
+		09DCBFC029B4EF18008F8254 /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCBFBF29B4EF18008F8254 /* ServicesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +73,6 @@
 		094A189A29B3A62200364A33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		094A189C29B3A62200364A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		094A18A129B3A62200364A33 /* mobileTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mobileTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		094A18A529B3A62200364A33 /* mobileTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileTaskTests.swift; sourceTree = "<group>"; };
 		094A18AB29B3A62200364A33 /* mobileTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mobileTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		094A18AF29B3A62200364A33 /* mobileTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileTaskUITests.swift; sourceTree = "<group>"; };
 		094A18B129B3A62300364A33 /* mobileTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		09DCBFB429B3CB8F008F8254 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		09DCBFB629B3CB94008F8254 /* UserDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetails.storyboard; sourceTree = "<group>"; };
 		09DCBFBD29B3DEBF008F8254 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		09DCBFBF29B4EF18008F8254 /* ServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0913338C29B4F652005DEEF1 /* Realm in Frameworks */,
+				0913338A29B4F64F005DEEF1 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +134,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0913338829B4F64F005DEEF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		094A188229B3A61E00364A33 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +148,7 @@
 				094A18A429B3A62200364A33 /* mobileTaskTests */,
 				094A18AE29B3A62200364A33 /* mobileTaskUITests */,
 				094A188C29B3A61E00364A33 /* Products */,
+				0913338829B4F64F005DEEF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,7 +178,7 @@
 		094A18A429B3A62200364A33 /* mobileTaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				094A18A529B3A62200364A33 /* mobileTaskTests.swift */,
+				09DCBFBF29B4EF18008F8254 /* ServicesTests.swift */,
 			);
 			path = mobileTaskTests;
 			sourceTree = "<group>";
@@ -356,6 +368,10 @@
 				094A18A329B3A62200364A33 /* PBXTargetDependency */,
 			);
 			name = mobileTaskTests;
+			packageProductDependencies = (
+				0913338929B4F64F005DEEF1 /* RealmSwift */,
+				0913338B29B4F652005DEEF1 /* Realm */,
+			);
 			productName = mobileTaskTests;
 			productReference = 094A18A129B3A62200364A33 /* mobileTaskTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -491,7 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				094A18A629B3A62200364A33 /* mobileTaskTests.swift in Sources */,
+				09DCBFC029B4EF18008F8254 /* ServicesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,6 +862,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0913338929B4F64F005DEEF1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09DCBFB829B3DDF5008F8254 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		0913338B29B4F652005DEEF1 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09DCBFB829B3DDF5008F8254 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
 		094A18C929B3A80900364A33 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 094A18C829B3A80900364A33 /* XCRemoteSwiftPackageReference "Alamofire" */;

@@ -22,6 +22,15 @@ struct User: Codable {
     let avatar: String
     var isFavorite = false
     
+    init(id: Int, email: String, firstName: String, lastName: String, avatar: String, isFavorite: Bool = false) {
+        self.id = id
+        self.email = email
+        self.firstName = firstName
+        self.lastName = lastName
+        self.avatar = avatar
+        self.isFavorite = isFavorite
+    }
+    
     init(from db: FavoriteUser) {
         id = db.id
         email = db.email
@@ -41,6 +50,10 @@ struct User: Codable {
 extension User: Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id
+    }
+    
+    static var mockUser: User {
+        User(id: 0, email: "email", firstName: "firstName", lastName: "lastName", avatar: "avatar")
     }
 }
 
